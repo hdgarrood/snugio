@@ -1,0 +1,2 @@
+module Snugio.Core () where
+

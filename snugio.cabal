@@ -1,13 +1,13 @@
 name:           snugio
 version:        0.1-alpha
-synopsis:       webmachine based http library
+synopsis:       webmachine based HTTP library
 description:
-  Snugio is a webmachine based http library which enables you to create
-  API's adhering to the HTTP 1.1 protocol.
+  Snugio is a webmachine based HTTP library which enables you to create
+  an API adhering to the HTTP 1.1 protocol.
 
 license:         BSD3
 licencse-file:   LICENSE
-author:          Petar Radosevic
+author:          Petar Radošević
 maintainer:      petar@wunki.org
 build-type:      Simple
 cabal-version:   >= 1.8
