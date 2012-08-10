@@ -1,0 +1,15 @@
+*~
+dist/
+cabal-dev
+**/cabal-dev
+*.tix
+*.prof
+*.hi
+*.o
+*.swp
+#*#
+.#*
+.DS_Store
+**/.DS_Store
+test/*.log
+test/log/*

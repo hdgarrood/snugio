@@ -1,0 +1,27 @@
+name:           snugio
+version:        0.1-alpha
+synopsis:       webmachine based http library
+description:
+  Snugio is a webmachine based http library which enables you to create
+  API's adhering to the HTTP 1.1 protocol.
+
+license:         BSD3
+licencse-file:   LICENSE
+author:          Petar Radosevic
+maintainer:      petar@wunki.org
+build-type:      Simple
+cabal-version:   >= 1.8
+homepage:        http://www.snug.io
+category:        Web
+
+Library
+  hs-source-dirs: src
+
+  build-depends:
+    base                >= 4   && < 5,
+    snap-core           >= 0.6 && < 0.9,
+    snap-server         >= 0.6 && < 0.9
+
+source-repository head
+  type:     git
+  location: git://github.com/wunki/snugio.git
