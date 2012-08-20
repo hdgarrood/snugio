@@ -45,6 +45,6 @@ instance Resource Post where
     service_available _ = True
     known_methods _ = ["GET", "POST", "DELETE"]
     
--- Check the simple flow
-post = Post "title" "content"
+-- Start 
+post = Post "Welcome to the webmachine" "Llorum Ipsum..."
 t = b13 post "request" "response" []
