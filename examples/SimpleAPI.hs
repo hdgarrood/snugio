@@ -1,9 +1,5 @@
 {-# LANGUAGE OverloadedStrings #-}
 
-import           Control.Monad
-import           Control.Monad.Trans     (liftIO)
-import qualified Data.Text.Lazy          as T
-import qualified Data.Text.Lazy.Encoding as E
 import           Snap.Core
 import           Snap.Http.Server
 
@@ -21,9 +17,10 @@ instance Resource Post where
     known_methods _ = ["GET", "POST", "DELETE"]
 
 -- Start
+post :: Post
 post = Post "Welcome to the webmachine" "Llorum Ipsum..."
-t = b13 post "request" "response" []
 
+t = b13 post "request" "response" []
 
 pong :: Snap ()
 pong = method GET $ do
