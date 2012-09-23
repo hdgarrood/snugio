@@ -14,7 +14,11 @@ cabal-version:   >= 1.8
 homepage:        http://www.snug.io
 category:        Web
 
-Library
+flag examples
+  description: build example files
+  default: False
+
+library
   hs-source-dirs: src
   ghc-options:    -O2 -Wall
 
@@ -25,6 +29,40 @@ Library
 
   exposed-modules:
     Snugio.Core
+
+executable simple-api
+  hs-source-dirs: examples
+  main-is: SimpleAPI.hs
+
+  if !flag(examples)
+     buildable: False
+
+  build-depends:
+    base                >= 4   && < 5,
+    snap-core           >= 0.6 && < 0.9,
+    snap-server         >= 0.6 && < 0.9,
+    text                >= 0.11,
+    mtl                 >= 2.1,
+    snugio
+
+executable riak-resource
+  hs-source-dirs: examples
+  main-is: RiakResource.hs
+
+  if !flag(examples)
+     buildable: False
+
+  build-depends:
+    base                >= 4   && < 5,
+    snap-core           >= 0.6 && < 0.9,
+    snap-server         >= 0.6 && < 0.9,
+    riak                >= 0.7,
+    text                >= 0.11,
+    mtl                 >= 2.1,
+    riak                >= 0.7,
+    aeson               >= 0.6,
+    bytestring          >= 0.9,     
+    snugio
 
 source-repository head
   type:     git

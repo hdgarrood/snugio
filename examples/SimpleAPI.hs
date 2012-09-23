@@ -17,22 +17,18 @@ data Post = Post
 
 -- Make it a resource
 instance Resource Post where
-    service_available _ = True
-    known_methods _ = ["GET", "POST", "DELETE"]
+    serviceAvailable _ = True
+    knownMethods _ = ["GET", "POST", "DELETE"]
+
+    resourceHandler _ = writeText "Welcome to Snugio"
 
 -- Start
 post = Post "Welcome to the webmachine" "Llorum Ipsum..."
-t = b13 post "request" "response" []
 
-
-pong :: Snap ()
-pong = method GET $ do
-    writeText "pong"
-
-serve :: Config Snap a -> IO()
+serve :: Config Snap a -> IO ()
 serve config = httpServe config $ route [
-  ("/", pong)
-  ]
+      ("/", resourceHandler post)
+      ]
 
 main :: IO ()
 main = serve defaultConfig
