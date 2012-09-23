@@ -13,6 +13,7 @@ class Resource a where
     knownMethods :: a -> [String]
 
     resourceHandler :: a -> Snap ()
+    resourceHandler _ = writeBS "Welcome to Snugio"
 
 -- All the states on the flow diagram, ordered. The states correspond to the
 -- functions below. Currently I manually call the next function, but it would
