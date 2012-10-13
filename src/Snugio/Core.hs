@@ -1,3 +1,5 @@
+{-# LANGUAGE OverloadedStrings #-}
+
 module Snugio.Core
   ( Resource(..)
   , b13 ) where
